@@ -19,11 +19,8 @@ builder.Services.AddScoped<IGitHubService, GitHubService>();
 builder.Services.Decorate<IGitHubService,CachedGitHubService>();
 builder.Services.AddGitHubIntegration(options => builder.Configuration.GetSection("GitHubIntegrationOptions").Bind(options));
 
-//builder.Services.Configure<GitHubIntegrationOptions>(builder.Configuration.GetSection(nameof(GitHubIntegrationOptions)));
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
