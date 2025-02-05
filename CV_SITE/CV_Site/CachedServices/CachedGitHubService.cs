@@ -55,7 +55,6 @@ namespace GitHub.API.CachedServices
             return await _gitHubService.GetLastUserPortfolioUpdateTime();
         }
 
-        // Helper Methods
         private async Task<bool> IsCacheValid(string cacheKey, Task<DateTime> lastUpdatedTimeTask)
         {
             var lastUpdated = await lastUpdatedTimeTask;
